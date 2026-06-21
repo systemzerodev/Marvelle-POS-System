@@ -1,36 +1,157 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<p align="center">
+  <img src="./design/banner.png" alt="Marvelle POS Banner" width="100%">
+</p>
 
-## Getting Started
+<h1 align="center">Marvelle POS</h1>
 
-First, run the development server:
+<p align="center">
+  Point of Sale System for Marvelle Cake
+</p>
+
+---
+
+## 📖 Overview
+
+Marvelle POS adalah aplikasi Point of Sale modern yang dibangun menggunakan Next.js dan TypeScript untuk membantu pengelolaan operasional bisnis Marvelle Cake.
+
+Fitur yang direncanakan:
+
+- Product Management
+- Point of Sale (POS)
+- Transaction Management
+- Inventory Tracking
+- QRIS Payment Support
+- Sales Reporting
+- Multi-Store Support (Future)
+
+---
+
+## 🚀 Tech Stack
+
+### Frontend
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+
+### Backend (Planned)
+
+- Next.js Server Actions
+- Prisma ORM
+
+### Database (Planned)
+
+- PostgreSQL
+
+---
+
+## 📋 Project Status
+
+Current Version:
+
+```text
+v0.1.0
+```
+
+Status:
+
+```text
+In Development
+```
+
+---
+
+## 🛣️ Roadmap
+
+### v0.1.0 — Project Initialization
+
+- [x] Setup GitHub Repository
+- [x] Initialize Next.js Project
+- [x] Configure TypeScript
+- [x] Configure Tailwind CSS
+- [x] Create Documentation
+
+### v0.2.0 — Dashboard Module
+
+- [ ] Dashboard Layout
+- [ ] Sidebar Navigation
+- [ ] Statistics Cards
+
+### v0.3.0 — Product Module
+
+- [ ] Product Management
+- [ ] Product Categories
+- [ ] Product CRUD
+
+### v0.4.0 — POS Module
+
+- [ ] Cart System
+- [ ] Checkout Process
+- [ ] Receipt Generation
+
+### v0.5.0 — Transactions
+
+- [ ] Transaction History
+- [ ] Sales Summary
+
+### v1.0.0 — Stable Release
+
+- [ ] Complete POS Workflow
+- [ ] QRIS Integration
+- [ ] Reporting Module
+
+---
+
+## ⚙️ Development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📂 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```text
+Marvelle-POS-System
+│
+├── app/
+├── public/
+├── design/
+│   └── banner.png
+│
+├── README.md
+├── CHANGELOG.md
+├── LICENSE
+│
+├── package.json
+└── tsconfig.json
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📄 License
 
-## Deploy on Vercel
+MIT License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 👨‍💻 Author
+
+Systemzerodev
+
+Built with Next.js, TypeScript, and Tailwind CSS.
