@@ -75,8 +75,8 @@ export default function Sidebar() {
 
       {/* Footer */}
       <div className="border-t p-4">
-        <p className="text-sm text-gray-500">Marvelle POS</p>
-        <p className="text-xs text-gray-400">Version 0.1.0</p>
+        <p className="font-medium">Marvelle POS</p>
+        <p className="text-sm text-gray-500">Version 0.2.0</p>
       </div>
     </aside>
   );
