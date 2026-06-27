@@ -117,6 +117,10 @@ export default function PosPage() {
 
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  const subtotal = total;
+
   const checkout = () => {
     if (cart.length === 0) {
       alert("Cart masih kosong");
@@ -238,10 +242,26 @@ export default function PosPage() {
             )}
           </div>
 
-          <div className="flex justify-between text-2xl font-bold mb-6">
-            <span>Total</span>
+          <hr className="my-6" />
 
-            <span>Rp {total.toLocaleString("id-ID")}</span>
+          <div className="space-y-2">
+            <div className="flex justify-between">
+              <span>Total Item</span>
+
+              <span>{totalItems}</span>
+            </div>
+
+            <div className="flex justify-between">
+              <span>Subtotal</span>
+
+              <span>Rp {subtotal.toLocaleString("id-ID")}</span>
+            </div>
+
+            <div className="border-t pt-3 mt-3 flex justify-between text-2xl font-bold">
+              <span>Total</span>
+
+              <span>Rp {total.toLocaleString("id-ID")}</span>
+            </div>
           </div>
 
           <div className="space-y-3">
@@ -261,8 +281,10 @@ export default function PosPage() {
       </div>
 
       {showReceipt && receipt && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-xl shadow-xl w-full max-w-lg p-6">
+        <div className="print-overlay fixed inset-0 bg-black/50 flex items-center justify-center overflow-y-auto p-6 z-50">
+          <div
+            id="receipt"
+            className="bg-white rounded-xl shadow-xl w-full max-w-lg my-10 max-h-[90vh] overflow-y-auto p-6">
             <div className="text-center border-b pb-4 mb-5">
               <h2 className="text-3xl font-bold">Marvelle Cake</h2>
 
@@ -278,6 +300,14 @@ export default function PosPage() {
 
               <p>
                 <strong>Date :</strong> {receipt.date}
+              </p>
+
+              <p>
+                <strong>Cashier :</strong> Admin
+              </p>
+
+              <p>
+                <strong>Payment :</strong> Cash
               </p>
             </div>
 
@@ -301,19 +331,56 @@ export default function PosPage() {
               ))}
             </div>
 
-            <hr className="my-5" />
+            <hr className="my-6" />
 
-            <div className="flex justify-between text-xl font-bold">
-              <span>Total</span>
+            <div className="space-y-2">
+              <div className="flex justify-between">
+                <span>Total Item</span>
 
-              <span>Rp {receipt.total.toLocaleString("id-ID")}</span>
+                <span>{totalItems}</span>
+
+                <span>Rp {subtotal.toLocaleString("id-ID")}</span>
+
+                <span>Rp {subtotal.toLocaleString("id-ID")}</span>
+              </div>
+
+              <div className="flex justify-between">
+                <span>Subtotal</span>
+
+                <span>Rp {subtotal.toLocaleString("id-ID")}</span>
+              </div>
+
+              <div className="border-t pt-3 mt-3 flex justify-between text-2xl font-bold">
+                <span>Total</span>
+
+                <span>Rp {subtotal.toLocaleString("id-ID")}</span>
+              </div>
             </div>
 
-            <button
-              onClick={closeReceipt}
-              className="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg">
-              Close
-            </button>
+            <div className="border-t mt-6 pt-6">
+              <div className="text-center text-sm text-gray-500">
+                <p>Thank you for shopping at Marvelle Cake</p>
+                <p>Freshly Baked with Love ❤️</p>
+              </div>
+
+              <div className="mt-5 border-t pt-3 text-center text-xs text-gray-500">
+                www.marvellecake.com
+              </div>
+            </div>
+
+            <div className="flex gap-3 mt-6 no-print">
+              <button
+                onClick={() => window.print()}
+                className="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition">
+                🖨 Print Receipt
+              </button>
+
+              <button
+                onClick={closeReceipt}
+                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition">
+                Close
+              </button>
+            </div>
           </div>
         </div>
       )}
